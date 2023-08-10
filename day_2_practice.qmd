@@ -12,3 +12,37 @@ rain <- c(3,5,10.1,6)
 rain_scaled <- 5*rain
 
 ```
+
+## Created Matrices
+
+```{r}
+my_values <- seq(from = 1, to = 10)
+
+```
+
+Create a matrix
+
+```{r}
+# Populates the matrix by column to row unless we specify we can change it to rows byrow = TRUE
+my_matrix <- matrix(my_values, nrow =2, ncol = 5, byrow = TRUE)
+```
+
+```{r}
+# We don't have a complete set of our multiples that will fit in this matrix so if we have more elements in a sequence it'll repeat 
+my_matrix <- matrix(data = my_values, nrow = 2, ncol = 5, byrow = TRUE)
+```
+
+```{r}
+#Combine sequence to matrix function
+# Add tabs to make the code more readable by moving them to their own line 
+matrixA <- matrix(data = seq(from = 2, to = 5, length = 10), 
+                  nrow = 2,
+                  ncol = 5, 
+                  byrow =TRUE)
+```
+
+```{r}
+# Matrix addition
+my_matrix + matrixA
+
+```
