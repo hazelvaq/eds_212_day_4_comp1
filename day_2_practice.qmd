@@ -46,3 +46,40 @@ matrixA <- matrix(data = seq(from = 2, to = 5, length = 10),
 my_matrix + matrixA
 
 ```
+
+## Matrix Multiplication
+
+```{r}
+cats <- matrix(data = c(0,4,3,1), nrow = 2, ncol = 2, byrow = TRUE)
+
+dogs <- matrix(data = c(6,-3,0,2), nrow = 2, ncol = 2, byrow = TRUE)
+
+dogs%*%cats
+```
+
+## Leslie matrix example
+
+```{r}
+#Matrix from lecture example of fly eggs surviving and fly population system of equations
+insect_leslie <- matrix(data = c(0, 0, 600, 0.2, 0, 0, 0, 0.08,0),
+                        nrow = 3,
+                        ncol = 3,
+                        byrow = TRUE)
+# Initial conditions 12,000 eggs, 700 larvae, 500 adults
+insect_y0 <- c(12000,700,500)
+
+```
+
+Find the population structure for each life stage at t = 1 year
+
+```{r}
+insect_y1 <- insect_leslie %*% insect_y0
+
+```
+
+Find the population structure at t = 2 years
+
+```{r}
+# Use the previous year to calculate the new year// Year 1 will become the initial 
+insect_y2 <- insect_leslie %*% insect_y1
+```
